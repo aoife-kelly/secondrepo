@@ -8,6 +8,11 @@ void setup() {
 void loop() {
   // read the input on analog pin 0:
   int knobValue = analogRead(A0);
+  if (knobValue > 400)
+  {
+    analogWrite(LED_BUILTIN, HIGH);
+    analogWrite(LED_BUILTIN, LOW);
+  }
    // print out the value you read:
   Serial.println(knobValue);
 
